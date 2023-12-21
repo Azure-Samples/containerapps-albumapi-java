@@ -7,6 +7,12 @@ import java.util.List;
 
 @RestController
 public class AlbumController {
+
+    @GetMapping("/")
+    public String home() {
+        return "Please visit /albums to see a list of albums.";
+    }
+
     @GetMapping("/albums")
     List<Album> getAllAlbums() {
         return List.of(new Album(1, "You, Me and an App Id", "Daprize", 10.99, "https://aka.ms/albums-daprlogo"),
