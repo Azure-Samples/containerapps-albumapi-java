@@ -7,6 +7,7 @@ COPY .mvn /app/.mvn
 COPY pom.xml /app
 COPY ./src /app/src
 RUN ls -la /app
+RUN chmod +x ./mvnw
 RUN ./mvnw dependency:go-offline -B -Dproduction package
 
 
